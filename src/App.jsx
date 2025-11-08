@@ -1,28 +1,38 @@
-import { useState } from 'react'
+import Hero from './components/Hero';
+import About from './components/About';
+import Projects from './components/Projects';
+import Estimator from './components/Estimator';
+import Contact from './components/Contact';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-black text-white">
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-black/60 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <a href="#home" className="font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-fuchsia-500">Nandhan K</a>
+          <nav className="hidden gap-6 md:flex text-sm text-cyan-100/90">
+            <a href="#about" className="hover:text-white">About</a>
+            <a href="#projects" className="hover:text-white">Projects</a>
+            <a href="#estimate" className="hover:text-white">Estimation</a>
+            <a href="#contact" className="hover:text-white">Contact</a>
+          </nav>
+          <a href="#contact" className="rounded-full bg-gradient-to-r from-blue-600 to-fuchsia-600 px-4 py-2 text-sm shadow-lg md:inline-block">Hire Me</a>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <Hero />
+        <About />
+        <Projects />
+        <Estimator />
+        <Contact />
+      </main>
+
+      <footer className="border-t border-white/10 bg-black/70 py-6 text-center text-cyan-200/70">
+        © {new Date().getFullYear()} Nandhan K — Built with love, motion, and code.
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
